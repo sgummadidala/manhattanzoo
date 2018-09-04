@@ -1,0 +1,18 @@
+1) Clone the below Git repository. 
+      git clone https://github.com/sgummadidala/manhattanzoo.git
+2) List branches and verify if we are on master
+3) Create a new branch with name "Feature-Add-Instructions" and checkout the same branch.
+4) Verify if new branch has same commit history as master.
+
+5). Create a new file "Instructions.txt"  with the below content 
+
+      Manhattan Zoo
+      Guidlines:
+      1. Blah Blah...
+
+6). make a new commit.
+5). Push the above new commit to remote.
+7). Go to github and create a new pull request.
+8). Let repository owner about this and get it approved.
+9). Merge pull request.
+    
