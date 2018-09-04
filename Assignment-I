@@ -1,7 +1,7 @@
 # manhattanzoo
 
-1: Initialize a new Git repository. 
-
+1: Clone the below Git repository. 
+      git clone https://github.com/sgummadidala/manhattanzoo.git
 2). Create a new file "meal-regimens.txt"  with the below content 
 
       Manhattan Zoo
@@ -45,3 +45,4 @@
         Directions: feed Gorillas in the morning as group, spread forage items during noon meal, and divide quantities for individual feeding in evening
       
 12). Git commit history
+13). Push local commits to the remote.
