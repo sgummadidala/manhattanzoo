@@ -1,0 +1,137 @@
+
+---------
+Overview:
+---------
+Git branching allows users to experiment with different versions of a project by checking out separate branches to work on.
+The following commands are useful in the Git branch workflow.
+
+git branch: Lists all a Git project's branches.
+git branch branch_name: Creates a new branch.
+git checkout branch_name: Used to switch from one branch to another.
+git merge branch_name: Used to join file changes from one branch to another.
+git branch -d branch_name: Deletes the branch specified.
+
+
+------------------------- 
+Preparation: Add data 
+------------------------- 
+    Create a new file resume.txt with the below content and commit:
+
+        PETE PAN
+        Address: No 31 Kensington Hill Park, London, England
+        Phone: 000-111-2222
+        -------------------
+
+        WORK EXPERIENCE
+        Leader - Lost Boys
+        Neverland, 5th Star to Right, Straight on 'Til Morning
+        Duties:
+        -Manage Lost Boys
+        -Consult with Winged Sprites
+        -Scheme Against Captain Hook
+        -------------------
+
+        VOLUNTEER EXPERIENCE
+
+----------------------------------------------------------------------------------------------------
+=============             Scenario-I: "Create a new branch"           =================
+----------------------------------------------------------------------------------------------------
+
+      1. Check what branch you are currently on.
+          In the output, the * (asterisk) is showing you what branch you’re on. The project only has one branch at this time.
+      2. Let's create a new version of a resumé to apply for a fencing instructor role.
+         Create a new branch called fencing.
+          Remember to spell the word "fencing" correctly.
+
+         Next, view your branches
+         Notice in the output there now appear two branches: master and fencing.
+   
+----------------------------------------------------------------------------------------------------
+=============             Scenario-II: "Fastforward merge"           =================
+----------------------------------------------------------------------------------------------------
+   
+      3. Switch to the fencing branch from the master branch.
+      4. Use git branch to verify that you have switched branches.
+         In the output, notice the * is now over the fencing branch.
+      5.Print the Git commit log.
+
+        Notice the output:
+        The commits you see were all made in the master branch. fencing inherited them.
+        This means that every commit master has, fencing also has.
+        Note: if you find that your cursor is stuck in Git log, press q to escape.
+
+      6.In resume.txt, replace your skill at scheming against Hook with your experience in sword-fights.
+
+        Delete this line:
+        -Scheme against Captain Hook
+
+        and type this line in its place:
+        -Engage in swordfights with pirates
+      7. Add resume.txt into the staging area.
+      8. Commit the changes to the repository with a commit message.
+      9. You are currently on the fencing branch. Switch over to the master branch.
+      10.Your sword-fighting experience is so impressive that it belongs on the master version of your resumé.
+
+          From the terminal, merge the fencing branch into the master branch.
+
+          Notice the output: The merge is a "fast forward" because Git recognizes that fencing contains the most recent commit. 
+                              Git fast forwards master to be up to date with fencing.
+                              
+----------------------------------------------------------------------------------------------------
+=============             Scenario-III: "Merge conflicts - merge commit"           =================
+----------------------------------------------------------------------------------------------------
+      11. You are on the master branch. 
+
+          update the below line:
+            from: -Engage in swordfights with pirates
+            to: -Engage in swordfights with professional pirates
+            ( Add the word "professional") 
+      12). Add resume.txt to the staging area. Commit the changes to the repository with a commit message.
+      13). Imagine a few weeks have passed, and you'd like to develop your fencing resumé some more.
+          Switch back to the fencing branch
+          From fencing branch, change the line so it reads:
+
+          -Engage in swordfights with professional pirates such as Smee.
+
+          Once again stage and commit this.
+      14). Switch to the master branch
+              From the terminal, enter the command below:
+
+              git merge fencing
+              This will try to merge fencing into master.
+
+              In the output, notice the lines:
+
+              CONFLICT (content): Merge conflict in resumé.txt
+              Automatic merge failed; fix conflicts and then commit the result.
+       15). We must fix the merge conflict.
+
+              look at resume.txt. Git uses markings to indicate the HEAD (master) version of the file and the fencing version of the file,
+              like this:
+
+              <<<<<<< HEAD
+              master version of line
+              =======
+              fencing version of line
+              >>>>>>> fencing
+              Git asks us which version of the file to keep: the version on master or the version on fencing. You decide you want the fencing version.
+
+              From the code editor:
+
+              Delete the content of the line as it appears in the master branch
+              Delete all of Git's special markings including the words HEAD and fencing, >>>>>
+      16). Add resume.txt to the staging area 
+            Now, make a commit. For your commit message, type "Resolve merge conflict" to indicate the purpose of the commit.
+
+----------------------------------------------------------------------------------------------------
+=============             Scenario-IV: "Delete branch"           =================
+----------------------------------------------------------------------------------------------------
+      
+      17). Delete the fencing branch.
+
+          Now, verify that you have indeed deleted fencing by listing all your project's branches on the terminal.
+          Notice in the output that only one branch, master, is shown.
+ 
+ 
+ References:
+ https://www.codecademy.com/courses/learn-git/lessons/git-branching/exercises/branch-review?modal=pro-trial-welcome
