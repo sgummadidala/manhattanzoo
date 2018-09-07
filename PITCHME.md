@@ -88,7 +88,7 @@ IMAGE FEATURES
 
 #### Tribal Boston team
 
-![Alt Text Goes Here](https://slack-files.com/T092MMC7J-FCMGDHC9Z-d94201a1dd)
+![Alt Text Goes Here](img/IMG_5786.jpg))
 
 ---?image=img/s.jpeg
 
