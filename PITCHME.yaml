@@ -1,2 +1,3 @@
 theme:black
 code-line-numbers : true
+theme-override : css/custom.css

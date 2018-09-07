@@ -1,0 +1,10 @@
+.headline {
+    color:red;
+    text-transform: uppercase;
+  }
+  
+  .byline {
+    color:green;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+  }
