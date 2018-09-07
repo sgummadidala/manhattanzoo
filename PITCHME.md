@@ -81,6 +81,38 @@ CODE FEATURES
 ---?code=src/server.js&lang=js&color=#1E1F21&title=Simple HTTPServer
 
 ---
+Chapter 5
+IMAGE FEATURES
+---
+@title[Deployment Architecture]
+
+#### Tribal Boston team
+
+![Alt Text Goes Here](https://slack-files.com/T092MMC7J-FCMGDHC9Z-d94201a1dd)
+
+---?image=img/t.jpg
+
+---?image=img/t.jpg&position=left&size=55% 100%
+
+@title[Get Ready]
+
+
+#### @size[0.6em](Get ready for some)
+
+<br>
+
+## @color[#e49436](Git)Pitch
+#### Presentation @fa[magic] @color[#e49436](Magic)
+### No apologies needed.
+### Just Markdown Image Magic.
+---?image=img/t.jpg&size=auto 60%&repeat=repeat-x
+
+### @color[white](Repeat background images)
+
+---?color=linear-gradient(to left, #56ccf2, #2f80ed)
+
+## Your Slide Content Goes Here
+
 ## Goodbye!
 +++
 
