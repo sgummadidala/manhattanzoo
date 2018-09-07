@@ -90,7 +90,7 @@ IMAGE FEATURES
 
 ![Alt Text Goes Here](https://slack-files.com/T092MMC7J-FCMGDHC9Z-d94201a1dd)
 
----?image=img/team.jpg
+---?image=img/sample.jpeg
 
 ---?image=img/t.jpg&position=left&size=30% 100%
 
