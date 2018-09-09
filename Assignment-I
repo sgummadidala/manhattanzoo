@@ -1,7 +1,25 @@
 # manhattanzoo
 
+==================
+commands:
+git clone <<url>>         => Clone the remote repository@url
+git status                => Current status of git repository
+git add <<filename>>      => Moves file to the staging area(Index)
+git add .                 => Moves all tracked/untracked files to the staging area
+git add -u                => Moves only modified files to the staging area (ignores Newly added/deleted files)
+git commit                => Saves stages files to the repository 
+                               (Running this command opens a commit editor to enter commit message, to close this editor press ESC then :x! ENTER )                               
+git diff --staged HEAD    => diff b/w staged content and recent commit  
+git diff                  => diff b/w working copy and staging area(index)  
+git commit -m "<<MSG>>"   => Inline commit message, Saves changes to the repository
+git log
+git log -n               => View recent n commints
+git log --oneline         => View all commits
+git push                  => Push local commits to remote repository
+=================
+
 1: Clone the below Git repository. 
-      git clone https://github.com/sgummadidala/manhattanzoo.git
+      https://github.com/sgummadidala/manhattanzoo.git
 2). Create a new file "meal-regimens.txt"  with the below content 
 
       Manhattan Zoo
@@ -19,30 +37,67 @@
       Directions: Empty bags over meadow area during designated times
 
 3). Check the status of the repository.
+     You should see your new file listed as untracked file(in red color). It's untracked because its not part of git yet.
 4). Add meal-regimens.txt to the staging area.
+      You should see your new file staged in green color.
 5). Make a commit.
+    a) View commit history and verify if the above commit exists.
+       Also, observe that HEAD and master branches points to this new commit.
+    
 6). Include this new info in meal-regimens.txt.
 
     3. Long-Tailed Chinchillas
     Meal: 1 bag animal pellets, 1 bag dried fruit, 1/2 bag cashews, 5 carrots, 3 stalks kale
     Times: 8:00 am
     Directions: disperse contents throughout Chinchilla habitat
-7). Add meal-regimens.txt to the staging area.
+7). Add meal-regimens.txt to the staging area(stage only modified i.e git add -u).
 8). Check the status of the Git project.
     You should see meal-regimens.txt listed as "modified".
 9). Make a commit.
 10). View your Git commit history.
       If your cursor is stuck in Git log mode, press "q" on your keyboard to escape.
-11). Here's two more animal reports. Include each in meal-regimens.txt, making a new commit for each animal added.
-        4. Poison Dart Frogs
-        Meal: 1 bag small crickets
-        Times: 6:00 am
-        Directions: empty bag in frog habitat once daily. Do not touch frogs! Extremely poisonous.
-
-        5. Western Lowland Gorilla
-        Meal: (Morning) 20 lbs. kale, 10 lbs. celery, 10 lbs. green beans, 5 lbs. carrots, 1 bag sweet potatoes. (Evening) 10 Bananas, 10 apples, 5 oranges, 5 mango, 20 lbs. grapes, 10 lbs. turnips, 5 lbs. white potatoes
-        Times: 6:30 am, 12:00 pm, 7:00 pm
-        Directions: feed Gorillas in the morning as group, spread forage items during noon meal, and divide quantities for individual feeding in evening
       
+==================================================
+Incremental Commits:
+     -It's a good practice to "Commit Early And Often"
+     -Never go with single large commit, Pefer incremental commits so that you can revert only particular change.
+==================================================
+                    
+11). Here's two more animal reports. Added the below meal-regimens.txt, making a new commit for each animal added.
+
+      Step I: Add the below lines first
+                   
+                    4. Poison Dart Frogs
+                    Meal: 1 bag small crickets
+                    Times: 6:00 am
+                    Directions: empty bag in frog habitat once daily. Do not touch frogs! Extremely poisonous.
+     
+     Step II: Stage meal-regimens.txt
+     Step III: View status of the repository, (don't commit now)
+     Step III: Add the below lines again.
+        
+                    5. Western Lowland Gorilla
+                    Meal: (Morning) 20 lbs. kale, 10 lbs. celery, 10 lbs. green beans, 5 lbs. carrots, 1 bag sweet potatoes. (Evening) 10 Bananas, 10 apples, 5 oranges, 5 mango, 20 lbs. grapes, 10 lbs. turnips, 5 lbs. white potatoes
+                    Times: 6:30 am, 12:00 pm, 7:00 pm
+                    Directions: feed Gorillas in the morning as group, spread forage items during noon meal, and divide quantities for individual feeding in evening
+     
+     Step IV: View status of the repository
+                (You should see meal-regimens.txt file in both staged and unstaged areas.
+                 Some part of the file is staged, some part is still in working area.
+                 
+                 How to see the staged content?
+                     git diff --staged HEAD (Difference between recent commit and staged area)
+                     expected output: Should list only 4. Poison Dart Frongs ...... 
+                 
+                 How to see diff b/w unstaged and staged content?
+                     git diff ( should list only 5.West Lowland Gorilla
+                 
+                 ).
+      Step V: Make first commit with only staged content.
+              (Executing GIT COMMIT -m "<<msg>>" will save the staged content only).
+      Step VI: Stage meal-regimens.txt again.
+              (git diff --cached HEAD => verify if it shows 5.West Lowland Gorilla .... )
+      Step VII: Make commit again.
+                
 12). Git commit history
 13). Push local commits to the remote.
