@@ -1,0 +1,101 @@
+Exercise:
+
+======================
+demo
+  -README.txt
+  -src
+    -1.txt
+    -2.txt
+======================
+
+
+
+1). Create a new directory called "demo"
+    mkdir demo
+    cd demo
+2). Convert this directory to a GIT repository
+    Git init
+
+    How do you know that this working directory is a git repository?
+    => Just execute "git" command on this directory, it will let you know if it is not a git repository
+
+3). Create a new README/1.txt/2.txt file and add some content.
+    vim README.txt
+    vim 1.txt
+    vim 2.txt
+
+4). Does adding a new file to the working folder adds files to the repo as well?
+    => No, you have to index it first (stage) then commit it to permanently move it to the repo.
+
+    git status (git scans the whole directory and lists untracked and tracked files.)
+
+5). Do incremental checkins.
+    #1 - commit readme file.
+        git add readme.txt
+        git commit
+        git log
+        git show HEAD (Observe whether head is pointing to the latest commit )
+    #2 - commit 1.txt and 2.text
+        git add 1.txt
+        git add 2.txt
+        git commit
+        git show HEAD
+6). Modify existing 1.txt file
+    git status => (observe that 1.txt is listed as a tracked file because it exists as part of git and we are just modifying it)
+
+    git add . => (staging all files)
+
+    git diff  => (observe the differences)
+    git commit
+
+7). View the previous commits
+    git log
+    git log --oneline
+
+8). How to view a specific commit details?
+    git show <<commit id (first 6-9 letter) >>
+
+9). Modify existing 1.txt file again and add some dirty content this time.
+
+    git status (see if it is listed as a tracked file)
+    git diff (see the differences )
+
+    how to reset this file back to the most recent version??
+    git checkout 1.txt (=> This should fetch the most recent version of this file from repository)
+
+    Can we reset this file to any specific version in its history?
+    Yes.
+    git checkout 1.txt <<commitid>>
+        (or)
+    git checkout HEAD~1
+
+10). How to see the differences between commits ?
+
+    git diff <<commit1id>>..<commit2id>>
+
+    git diff HEAD~1 HEAD
+
+11). How to revert a dirty commit?
+    (Git commits are immutable, you can only revert by adding another undo commit )
+
+    git revert <<commitid>>
+
+    git log --oneline (observe that a new commit has been created to revert content )
+
+12). Can't we revert a dirty commit without adding a new revert commit ??
+
+     Yes, just reset HEAD
+
+     Git reset --soft <<commitid>>
+
+     Git reset --soft Head
+
+     Git reset --soft Head~1 (if you want to revert previous to the most recent one)
+
+     Note: Observe that reset command reset the Index/Staging area with the reverted commits content.
+           You can modify and do another clean commit.
+13). How to instruct git to ignore some files like bin?
+
+    touch .gitignore
+    vim .gitignore
+    git commit
