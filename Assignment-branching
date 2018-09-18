@@ -9,6 +9,8 @@ The following commands are useful in the Git branch workflow.
 2. git branch branch_name: Creates a new branch.
 3. git checkout branch_name: Used to switch from one branch to another.
 4. git checkout -b branch_name: Both 2&3 creates a new branch and switch to that.
+4a. **git checkout -b <<new-localbranchname>> origin/<<remotebranchname>> 
+     [Not required for this exercise, but use this when you want to work with some remote branch ]
 5. git merge branch_name: Used to join file changes from one branch to another.
 6. git branch -d branch_name: Deletes the branch specified.
 
