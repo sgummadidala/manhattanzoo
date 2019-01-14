@@ -22,7 +22,7 @@ git push                  => Push local commits to remote repository
       https://github.com/sgummadidala/manhattanzoo.git
 1a): Make your own branch:
        => Run the command
-             git checkout -b "NewbranchName
+             git checkout -b <<NewbranchName>>
        => Run the below command verify if you are on the new branch
              git branch
 2). Create a new file "meal-regimens.txt"  with the below content 
